@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SharpBooks.Models
 {
-    public class BookCacheModel
+    public class BookCache
     {
         public int Id { get; set; }
         public string SearchQuery { get; set; }

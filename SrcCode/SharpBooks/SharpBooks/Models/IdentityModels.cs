@@ -29,11 +29,12 @@ namespace SharpBooks.Models
 
         public DbSet<Book> Books { get; set; }
         public DbSet<BookshelfItem> BookShelfItems { get; set; }
-
+        public DbSet<BookCache> BookCache { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>().HasKey(a => a.Id);
+            modelBuilder.Entity<Book>().HasKey(a => a.Id).HasRequired(e => e.Cache);
             modelBuilder.Entity<BookshelfItem>().HasKey(b => b.Id).HasRequired(c => c.User);
+            modelBuilder.Entity<BookCache>().HasKey(d => d.Id);
             base.OnModelCreating(modelBuilder);
         }
 
