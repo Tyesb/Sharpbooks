@@ -37,7 +37,7 @@ namespace SharpBooks.Models
         public int pageCount { get; set; }
         public string printType { get; set; }
         public List<string> categories { get; set; }
-        public int averageRating { get; set; }
+        public float averageRating { get; set; }
         public int ratingsCount { get; set; }
         public string contentVersion { get; set; }
         public ImageLinks imageLinks { get; set; }
@@ -95,7 +95,7 @@ namespace SharpBooks.Models
         public SearchInfo searchInfo { get; set; }
     }
 
-    public class GoogleBookResult
+    public class GoogleBookResult 
     {
         public string kind { get; set; }
         public int totalItems { get; set; }
