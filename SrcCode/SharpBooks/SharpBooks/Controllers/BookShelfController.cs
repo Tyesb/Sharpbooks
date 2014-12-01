@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SharpBooks.Models;
+using Microsoft.AspNet.Identity;
 
 namespace SharpBooks.Controllers
 {
@@ -74,6 +75,10 @@ namespace SharpBooks.Controllers
         [ResponseType(typeof(BookshelfItem))]
         public IHttpActionResult PostBookshelfItem(BookshelfItem bookshelfItem)
         {
+            var userID = User.Identity.GetUserId();
+            string currentUserID = User.Identity.GetUserId();
+            db.Users.Find(currentUserID);
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
