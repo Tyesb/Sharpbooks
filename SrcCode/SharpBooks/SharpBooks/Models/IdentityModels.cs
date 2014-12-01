@@ -25,6 +25,8 @@ namespace SharpBooks.Models
         {
         }
 
+        public DbSet<Book> Books { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
