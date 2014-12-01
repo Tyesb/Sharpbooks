@@ -17,7 +17,7 @@ namespace SharpBooks.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Search
-        public IQueryable<Book> GetBooks()
+        public IQueryable<Book> GetBooks(string search) //Search not implemented yet. To be added later.
         {
             return db.Books;
         }
