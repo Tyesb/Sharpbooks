@@ -96,15 +96,25 @@ namespace SharpBooks.Controllers
         [ResponseType(typeof(BookshelfItem))]
         public IHttpActionResult DeleteBookshelfItem(int id)
         {
+            var userID = User.Identity.GetUserId();
+            string currentUserID = User.Identity.GetUserId();
+
+
             BookshelfItem bookshelfItem = db.BookShelfItems.Find(id);
             if (bookshelfItem == null)
             {
                 return NotFound();
             }
 
-            db.BookShelfItems.Remove(bookshelfItem);
-            db.SaveChanges();
-
+            if (currentUserID == bookshelfItem.User.Id)
+            {
+                db.BookShelfItems.Remove(bookshelfItem);
+                db.SaveChanges();
+            }
+            else
+            {
+                return NotFound();
+            }
             return Ok(bookshelfItem);
         }
 

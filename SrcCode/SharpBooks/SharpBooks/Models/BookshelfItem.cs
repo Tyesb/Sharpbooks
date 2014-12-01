@@ -12,6 +12,6 @@ namespace SharpBooks.Models
         public string ISBN { get; set; }
         // public string UserID { get; set; }
         [JsonIgnore]
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
