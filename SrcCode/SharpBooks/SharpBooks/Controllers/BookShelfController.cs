@@ -20,7 +20,8 @@ namespace SharpBooks.Controllers
         // GET: api/BookShelf
         public IQueryable<BookshelfItem> GetBookShelfItems()
         {
-            return db.BookShelfItems;
+            string currentUserID = User.Identity.GetUserId();
+            return db.BookShelfItems.Where(a => currentUserID == a.User.Id);
         }
 
         // GET: api/BookShelf/5
@@ -75,15 +76,16 @@ namespace SharpBooks.Controllers
         [ResponseType(typeof(BookshelfItem))]
         public IHttpActionResult PostBookshelfItem(BookshelfItem bookshelfItem)
         {
-            var userID = User.Identity.GetUserId();
-            string currentUserID = User.Identity.GetUserId();
-            db.Users.Find(currentUserID);
-
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            var userID = User.Identity.GetUserId();
+            string currentUserID = User.Identity.GetUserId();
+            ApplicationUser userFound = db.Users.Find(currentUserID);
+
+            bookshelfItem.User = userFound;
             db.BookShelfItems.Add(bookshelfItem);
             db.SaveChanges();
 
