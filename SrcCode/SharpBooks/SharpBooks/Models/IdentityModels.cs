@@ -27,6 +27,12 @@ namespace SharpBooks.Models
 
         public DbSet<Book> Books { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>().HasKey(a => a.Id);
+            base.OnModelCreating(modelBuilder);
+        }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
