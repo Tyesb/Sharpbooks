@@ -24,18 +24,18 @@ namespace SharpBooks.Controllers
             return db.BookShelfItems.Where(a => currentUserID == a.User.Id);
         }
 
-        // GET: api/BookShelf/5
-        [ResponseType(typeof(BookshelfItem))]
-        public IHttpActionResult GetBookshelfItem(int id)
-        {
-            BookshelfItem bookshelfItem = db.BookShelfItems.Find(id);
-            if (bookshelfItem == null)
-            {
-                return NotFound();
-            }
+        //// GET: api/BookShelf/5
+        //[ResponseType(typeof(BookshelfItem))]
+        //public IHttpActionResult GetBookshelfItem(int id)
+        //{
+        //    BookshelfItem bookshelfItem = db.BookShelfItems.Find(id);
+        //    if (bookshelfItem == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(bookshelfItem);
-        }
+        //    return Ok(bookshelfItem);
+        //}
 
         //// PUT: api/BookShelf/5
         //[ResponseType(typeof(void))]
