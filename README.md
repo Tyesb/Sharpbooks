@@ -22,8 +22,14 @@ Sharpbooks
 #Bookshelf API
 *description* should add books to your bookshelf
 
-*GET
+-GET
+/api/search
+gets all the books from your bookshelf
 
-*POST
+-POST
+/api/bookshelf
 
-*DELETE
+
+-DELETE
+/api/isbn
+send the isbn number of the book to delete
