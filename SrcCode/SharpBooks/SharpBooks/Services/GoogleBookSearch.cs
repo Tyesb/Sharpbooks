@@ -25,9 +25,11 @@ namespace SharpBooks.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 String URIEncodedQueryString = HttpUtility.UrlEncode(input);
+                string query = "?q=" + URIEncodedQueryString + ApiKey;
+
 
                 // New code:
-                HttpResponseMessage response = await client.GetAsync("?q=" + URIEncodedQueryString + ApiKey);
+                HttpResponseMessage response = await client.GetAsync(query);
                 if (response.IsSuccessStatusCode)
                 {
                     string peek = await response.Content.ReadAsStringAsync();
