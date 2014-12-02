@@ -200,6 +200,10 @@
     <Compile Include="Migrations\201412010330132_BookShelf_To_User.Designer.cs">
       <DependentUpon>201412010330132_BookShelf_To_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412012240459_added-book-cache.cs" />
+    <Compile Include="Migrations\201412012240459_added-book-cache.Designer.cs">
+      <DependentUpon>201412012240459_added-book-cache.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -293,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412010330132_BookShelf_To_User.resx">
       <DependentUpon>201412010330132_BookShelf_To_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412012240459_added-book-cache.resx">
+      <DependentUpon>201412012240459_added-book-cache.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
