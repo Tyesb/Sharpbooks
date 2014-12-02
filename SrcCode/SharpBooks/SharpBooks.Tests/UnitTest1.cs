@@ -85,5 +85,6 @@ namespace SharpBooks.Tests
             Assert.IsNotNull(book);
 
         }
+        //https://www.acmi.net.au/media/12347/javascript_the_good_parts.pdf
     }
 }
