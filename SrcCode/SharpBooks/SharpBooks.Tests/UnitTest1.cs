@@ -27,7 +27,7 @@ namespace SharpBooks.Tests
             GoogleBookSearch testSearch = new GoogleBookSearch();
 
             //act
-            IEnumerable<Models.Book> result = testSearch.Search("Stephen King").Result;
+            IEnumerable<Models.Book> result = testSearch.GeneralSearch("Stephen King").Result;
 
             //assert
             Assert.IsNotNull(result);
@@ -45,11 +45,44 @@ namespace SharpBooks.Tests
             //act
             Guid guid =  Guid.NewGuid();
             String GuidString = guid.ToString(); 
-            IEnumerable<Models.Book> result = testSearch.Search(GuidString).Result;
+            IEnumerable<Models.Book> result = testSearch.GeneralSearch(GuidString).Result;
 
             //assert
             var GuidResult = result.Any(n => n.Title.Equals(GuidString));
             Assert.IsFalse(GuidResult);
+
+        }
+
+        [TestMethod]
+        public void testTitleSearchReturnsNothing()
+        {
+            //arrange
+            GoogleBookSearch testSearch = new GoogleBookSearch();
+
+            //act
+            Guid guid = Guid.NewGuid();
+            String GuidString = guid.ToString();
+            IEnumerable<Models.Book> result = testSearch.TitleSearch(GuidString).Result;
+
+            //assert
+            var GuidResult = result.Any(n => n.Title.Equals(GuidString));
+            Assert.IsFalse(GuidResult);
+
+        }
+
+        [TestMethod]
+        public void testTitleSearchReturns()
+        {
+            //arrange
+            GoogleBookSearch testSearch = new GoogleBookSearch();
+
+            //act
+            IEnumerable<Models.Book> result = testSearch.TitleSearch("The Shining").Result;
+
+            //assert
+            Assert.IsNotNull(result);
+            var book = result.FirstOrDefault(n => n.Title.Equals("The Shining"));
+            Assert.IsNotNull(book);
 
         }
     }
