@@ -17,7 +17,7 @@ namespace SharpBooks.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Books", "Cache_Id", c => c.Int(nullable: false));
+            AddColumn("dbo.Books", "Cache_Id", c => c.Int(nullable: true));
             CreateIndex("dbo.Books", "Cache_Id");
             AddForeignKey("dbo.Books", "Cache_Id", "dbo.BookCaches", "Id", cascadeDelete: true);
         }
