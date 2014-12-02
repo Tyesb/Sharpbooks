@@ -16,13 +16,13 @@ namespace SharpBooks.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Search
-        public IQueryable<Book> GetBooks(string search) //Search not implemented yet. To be added later.
+        // GET: api/GeneralSearch
+        public IQueryable<Book> GetBooks(string search) //GeneralSearch not implemented yet. To be added later.
         {
             return db.Books;
         }
 
-        // GET: api/Search/5
+        // GET: api/GeneralSearch/5
         //[ResponseType(typeof(Book))]
         //public IHttpActionResult GetBook(int id)
         //{
@@ -35,7 +35,7 @@ namespace SharpBooks.Controllers
         //    return Ok(book);
         //}
 
-        // PUT: api/Search/5
+        // PUT: api/GeneralSearch/5
         //[ResponseType(typeof(void))]
         //public IHttpActionResult PutBook(int id, Book book)
         //{
@@ -70,7 +70,7 @@ namespace SharpBooks.Controllers
         //    return StatusCode(HttpStatusCode.NoContent);
         //}
 
-        //// POST: api/Search
+        //// POST: api/GeneralSearch
         //[ResponseType(typeof(Book))]
         //public IHttpActionResult PostBook(Book book)
         //{
@@ -85,7 +85,7 @@ namespace SharpBooks.Controllers
         //    return CreatedAtRoute("DefaultApi", new { id = book.Id }, book);
         //}
 
-        //// DELETE: api/Search/5
+        //// DELETE: api/GeneralSearch/5
         //[ResponseType(typeof(Book))]
         //public IHttpActionResult DeleteBook(int id)
         //{
