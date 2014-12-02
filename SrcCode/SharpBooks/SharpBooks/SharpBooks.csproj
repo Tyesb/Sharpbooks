@@ -185,6 +185,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookShelfController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -196,9 +197,23 @@
     <Compile Include="Migrations\201411302328386_init.Designer.cs">
       <DependentUpon>201411302328386_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412010330132_BookShelf_To_User.cs" />
+    <Compile Include="Migrations\201412010330132_BookShelf_To_User.Designer.cs">
+      <DependentUpon>201412010330132_BookShelf_To_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412012240459_added-book-cache.cs" />
+    <Compile Include="Migrations\201412012240459_added-book-cache.Designer.cs">
+      <DependentUpon>201412012240459_added-book-cache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412020120328_add_isbn_to_books.cs" />
+    <Compile Include="Migrations\201412020120328_add_isbn_to_books.Designer.cs">
+      <DependentUpon>201412020120328_add_isbn_to_books.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookCache.cs" />
+    <Compile Include="Models\BookshelfItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Result.cs" />
@@ -287,6 +302,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201411302328386_init.resx">
       <DependentUpon>201411302328386_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412010330132_BookShelf_To_User.resx">
+      <DependentUpon>201412010330132_BookShelf_To_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412012240459_added-book-cache.resx">
+      <DependentUpon>201412012240459_added-book-cache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412020120328_add_isbn_to_books.resx">
+      <DependentUpon>201412020120328_add_isbn_to_books.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
