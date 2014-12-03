@@ -47,13 +47,6 @@ namespace SharpBooks
        appId: "743805119046363",
        appSecret: "e5d0dc8b759db73d2e4ceef5e67a5132");
 
-
-
-
-
-
-
-
             //*****End of where I put my stuffs **********
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
