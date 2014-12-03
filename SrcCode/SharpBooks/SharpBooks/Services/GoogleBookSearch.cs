@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using SharpBooks.ExtensionMethods;
+using System.Diagnostics;
 
 namespace SharpBooks.Services
 {
@@ -33,7 +34,8 @@ namespace SharpBooks.Services
                 if (response.IsSuccessStatusCode)
                 {
                     string peek = await response.Content.ReadAsStringAsync();
-                    GoogleBookResult result = await response.Content.ReadAsAsync<GoogleBookResult>();
+                    Debug.WriteLine(peek);
+; GoogleBookResult result = await response.Content.ReadAsAsync<GoogleBookResult>();
                     if (result.items == null)
                     {
                         result.items = new List<GoogleBookItem>();

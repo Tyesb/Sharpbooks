@@ -36,6 +36,24 @@ namespace SharpBooks
                 }
             });            
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            //*****Here is where I put my stuffs ********
+
+             app.UseGoogleAuthentication(
+         clientId: "221974918903-2cablpt9v8uag84bomf6eki055j2c3mf.apps.googleusercontent.com",
+         clientSecret: "pVpjwjDzSdV276dWTXEIU0yf");
+
+             app.UseFacebookAuthentication(
+       appId: "743805119046363",
+       appSecret: "e5d0dc8b759db73d2e4ceef5e67a5132");
+
+
+
+
+
+
+
+
+            //*****End of where I put my stuffs **********
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
             app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));

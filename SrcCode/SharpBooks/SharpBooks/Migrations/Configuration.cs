@@ -22,21 +22,21 @@ namespace SharpBooks.Migrations
             //  to avoid creating duplicate seed data. E.g.
             //
 
-            List<Book> bookList = new List<Book>() {
-              new Book { Title = "Andrew Peters Screams", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() },
-              new Book { Title = "Brice Lambson & the Bunny Rabbit", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() },
-              new Book { Title = "The Life & Struggles of Rowan Miller", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() }
+            //List<Book> bookList = new List<Book>() {
+            //  new Book { Title = "Andrew Peters Screams", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() },
+            //  new Book { Title = "Brice Lambson & the Bunny Rabbit", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() },
+            //  new Book { Title = "The Life & Struggles of Rowan Miller", Author = Faker.NameFaker.Name(), ISBN = Faker.NumberFaker.Number(1000000, 10000000).ToString() }
             
-            };
+            //};
 
 
            
                 
            
-            context.Books.AddOrUpdate(
-              p => p.Title,
-              bookList.ToArray()
-             );
+            //context.Books.AddOrUpdate(
+            //  p => p.Title,
+            //  bookList.ToArray()
+            // );
 
          
            
