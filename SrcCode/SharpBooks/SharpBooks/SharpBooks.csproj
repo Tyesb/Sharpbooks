@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -256,6 +256,10 @@
     <Compile Include="Migrations\201412020120328_add_isbn_to_books.Designer.cs">
       <DependentUpon>201412020120328_add_isbn_to_books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412030109060_oauth_google_and_thefacedevil.cs" />
+    <Compile Include="Migrations\201412030109060_oauth_google_and_thefacedevil.Designer.cs">
+      <DependentUpon>201412030109060_oauth_google_and_thefacedevil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -300,6 +304,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Searchfunction.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -359,6 +364,9 @@
     <EmbeddedResource Include="Migrations\201412020120328_add_isbn_to_books.resx">
       <DependentUpon>201412020120328_add_isbn_to_books.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412030109060_oauth_google_and_thefacedevil.resx">
+      <DependentUpon>201412030109060_oauth_google_and_thefacedevil.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -378,7 +386,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50180</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50180/</IISUrl>
+          <IISUrl>https://localhost:44300/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

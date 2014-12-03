@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,6 +10,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SharpBooks.Models;
+using SharpBooks.Services;
+using System.Threading.Tasks;
 
 namespace SharpBooks.Controllers
 {
@@ -17,9 +20,13 @@ namespace SharpBooks.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/GeneralSearch
-        public IQueryable<Book> GetBooks(string search) //GeneralSearch not implemented yet. To be added later.
+        public async Task< IEnumerable<Book>> GetBooks(string search) //GeneralSearch not implemented yet. To be added later.
         {
-            return db.Books;
+            GoogleBookSearch getBooksSearch = new GoogleBookSearch();
+           // return getBooksSearch.GeneralSearch(search).Result;
+
+           var TheResult =  await getBooksSearch.GeneralSearch(search);
+           return TheResult; 
         }
 
         // GET: api/GeneralSearch/5
