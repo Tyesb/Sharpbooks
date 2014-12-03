@@ -30,6 +30,8 @@ namespace SharpBooks.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            //tb this is the shit needed for deployment migrations. we hope
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>());
         }
 
         public DbSet<Book> Books { get; set; }
@@ -45,6 +47,7 @@ namespace SharpBooks.Models
 
         public static ApplicationDbContext Create()
         {
+
             return new ApplicationDbContext();
         }
     }
