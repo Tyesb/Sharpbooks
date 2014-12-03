@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using SharpBooks.Models;
+using Owin.Security.Providers.GooglePlus;
 
 namespace SharpBooks
 {
@@ -68,9 +69,9 @@ namespace SharpBooks
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "ZLS8zcpM4KfCrvO6M3ybx6tTK",
+               consumerSecret: "ydptrTs1oWHPnCcBC6fRjRAgYVMxzqIBOuNGbvM1GaB4i0PNcZ");
 
             //app.UseFacebookAuthentication(
             //   appId: "",
@@ -78,8 +79,8 @@ namespace SharpBooks
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "264816556108-qqfigkgofif65l60880t9ialpue3ijcj.apps.googleusercontent.com",
+            //    ClientSecret = "hR51_xzJlLxzUfBYyU1zJobz "
             //});
         }
     }
