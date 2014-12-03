@@ -11,6 +11,11 @@ namespace SharpBooks.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual ICollection BookShelfItems { get; set; }
+        //****MY STUFF START****
+        public string HomeTown { get; set; }
+        public System.DateTime? BirthDate { get; set; }
+
+        //****MY STUFF END *****
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
