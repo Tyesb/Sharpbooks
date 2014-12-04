@@ -8,11 +8,19 @@
     <form>
         <fieldset>
             <input type="search" name="Search" id="Search" />
-            <input type="submit" name="submit" id="submitBookSearch" />
+            <input type="submit" name="submit" data-bind="click: searchClick" />
         </fieldset>
        
     </form>
-    <div id="results">
-        <ul></ul>
+    <div>
+        <ul data-bind="foreach: searchResults">
+            <li>
+                <div class="bookSearchItem">
+                    <span data-bind="text: Title"> </span>
+                    <!--<a href="#" data-bind="click: $"></a>-->
+                </div>
+                <!--button for add-->
+            </li>
+        </ul>
     </div>
 </div>
