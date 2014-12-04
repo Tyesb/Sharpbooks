@@ -1,8 +1,9 @@
 ﻿console.log('onehittaquitta');
 var ClickCounterViewModel = function () {
 
-    this.searchResults = ko.observableArray();
     var self = this;
+    this.searchResults = ko.observableArray();
+    this.bookShelfItems = ko.observableArray();
     this.searchClick = function () {
 
         $.ajax({
