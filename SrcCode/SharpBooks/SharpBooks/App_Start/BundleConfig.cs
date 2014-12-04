@@ -15,7 +15,10 @@ namespace SharpBooks
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/tyebun").Include(
-                        "~/Scripts/Searchfunction.js"));
+                        "~/Scripts/Searchfunction.js",
+                        "~/Scripts/knockout-3.2.0.js",
+                        "~/Scripts/Application/ViewModel.js"
+                        ));
             
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
