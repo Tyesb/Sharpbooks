@@ -7,27 +7,31 @@
     <h2>Sharpbooks!</h2>
     <form>
         <fieldset>
-            <input type="search" name="Search" id="Search" data-bind ="value:searchBox"/>
+            <input type="search" name="Search" id="Search" data-bind="value:searchBox" />
             <input type="submit" name="submit" data-bind="click: searchClick" />
         </fieldset>
     </form>
-    
+
     <div data-bind='foreach: bookShelfItems' class="bookshelf">
         <div>
             <ul>
-                <li data-bind='text: Title'></li> 
+                <li data-bind='text: Title'></li>
             </ul>
-        </div>  
+        </div>
     </div>
-    
-    <div>
+
+    <div id="bookListWrapper">
         <ul data-bind="foreach: searchResults">
             <li>
                 <div class="bookSearchItem">
-                    <span data-bind="text: Title"> </span>
-                    <img data-bind="attr: { src: ImgURI , title: Title}" />
-                       
-                    
+                    <div class="bookTitle">
+                        <span data-bind="text: Title"> </span>
+                    </div>
+                    <div class="bookImage">
+                        <img data-bind="attr: { src: ImgURI , title: Title}" />
+                    </div>
+
+
                     <!--<a href="#" data-bind="click: $"></a>-->
                 </div>
                 <!--button for add-->

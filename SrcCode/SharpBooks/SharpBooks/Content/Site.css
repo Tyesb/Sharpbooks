@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.bookImage {
+    display: none;
+    padding-left: 200px;
+    float: left;
+}
+
+.displayBookImage {
+    display: block;
+}
