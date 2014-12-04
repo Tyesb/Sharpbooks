@@ -1,6 +1,6 @@
 ﻿var BookshelfViewModel = function() {
     var self = this;
-    self.bookshelfitems = ko.observableArray();
+    this.bookshelfitems = ko.observableArray();
 
     $.ajax({
         url: 'api/BookShelf',
