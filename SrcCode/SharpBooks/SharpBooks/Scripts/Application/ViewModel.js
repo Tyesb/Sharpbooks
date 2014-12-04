@@ -44,8 +44,6 @@ var ClickCounterViewModel = function () {
 ko.applyBindings(new ClickCounterViewModel());
 
 $("#bookListWrapper").on("click", ".bookTitle", function(event) {
-    console.log($(event));
-    console.log(event.siblings("div"));
-    $(event).closest(".bookImage").addClass(".displayBookImage");
+    $(this).next(".bookImage").addClass("displayBookImage");
     console.log("clicked on title");
 });
