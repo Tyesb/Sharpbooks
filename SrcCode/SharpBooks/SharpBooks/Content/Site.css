@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#bookShelf {
+     float: right;
+    width: 300px;
+    background-color: #b0e0e6;
+}
