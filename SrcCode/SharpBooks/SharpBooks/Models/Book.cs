@@ -13,5 +13,6 @@ namespace SharpBooks.Models
         public string Author { get; set; }
         public string ISBN { get; set; }
         public virtual BookCache Cache { get; set; }
+        public string ImgURI { get; set; }
     }
 }
