@@ -14,7 +14,9 @@ namespace SharpBooks.Models
 
         [Required]
         public string ISBN { get; set; }
-        // public string UserID { get; set; }
+
+        public string ImgURI { get; set; }
+
         [JsonIgnore]
         public virtual ApplicationUser User { get; set; }
     }

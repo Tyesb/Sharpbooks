@@ -43,8 +43,8 @@ namespace SharpBooks.Tests
             GoogleBookSearch testSearch = new GoogleBookSearch();
 
             //act
-            Guid guid =  Guid.NewGuid();
-            String GuidString = guid.ToString(); 
+            Guid guid = Guid.NewGuid();
+            String GuidString = guid.ToString();
             IEnumerable<Models.Book> result = testSearch.GeneralSearch(GuidString).Result;
 
             //assert
@@ -85,6 +85,43 @@ namespace SharpBooks.Tests
             Assert.IsNotNull(book);
 
         }
+
+        [TestMethod]
+        public void testISBNeSearchReturns()
+        {
+            //arrange
+            GoogleBookSearch testSearch = new GoogleBookSearch();
+
+            //act
+            IEnumerable<Models.Book> result = testSearch.ISBNSearch("1741147514").Result;
+
+            //assert
+            Assert.IsNotNull(result);
+            var book = result.FirstOrDefault(n => n.Title.Equals("The Book of Everything"));
+            Assert.IsNotNull(book);
+            Assert.AreEqual("The Book of Everything", book.Title);
+
+
+        }
+
         //https://www.acmi.net.au/media/12347/javascript_the_good_parts.pdf
+
+
+        [TestMethod]
+        public void searchReturnsNothing()
+        {
+            //arrange
+            GoogleBookSearch testSearch = new GoogleBookSearch();
+
+            //act
+            Guid guid = Guid.NewGuid();
+            String GuidString = guid.ToString();
+            IEnumerable<Models.Book> result = testSearch.ISBNSearch(GuidString).Result;
+
+            //assert
+            var GuidResult = result.Any(n => n.Title.Equals(GuidString));
+            Assert.IsFalse(GuidResult);
+
+        }
     }
 }
