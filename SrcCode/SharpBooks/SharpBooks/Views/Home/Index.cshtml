@@ -7,7 +7,7 @@
     <h2>Sharpbooks!</h2>
     <form>
         <fieldset>
-            <input type="search" name="Search" id="Search" />
+            <input type="search" name="Search" id="Search" data-bind ="value:searchBox"/>
             <input type="submit" name="submit" data-bind="click: searchClick" />
         </fieldset>
     </form>
@@ -25,6 +25,9 @@
             <li>
                 <div class="bookSearchItem">
                     <span data-bind="text: Title"> </span>
+                    <img data-bind="attr: { src: ImgURI , title: Title}" />
+                       
+                    
                     <!--<a href="#" data-bind="click: $"></a>-->
                 </div>
                 <!--button for add-->
