@@ -18,6 +18,7 @@ namespace SharpBooks
                         "~/Scripts/Searchfunction.js",
                         "~/Scripts/knockout-3.2.0.js",
                         "~/Scripts/Application/ViewModel.js"
+           //             "~/Scripts/Application/Bookshelf.js"
                         ));
             
 

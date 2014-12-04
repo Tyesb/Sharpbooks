@@ -19,7 +19,7 @@ namespace SharpBooks.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/GeneralSearch
+        // GET: api/Search
         public async Task< IEnumerable<Book>> GetBooks(string search) //GeneralSearch not implemented yet. To be added later.
         {
             GoogleBookSearch getBooksSearch = new GoogleBookSearch();
