@@ -13,8 +13,10 @@ namespace SharpBooks.ExtensionMethods
 
             foreach (GoogleBookItem item in result.items)
             {
-                yield return new Book { Title = item.volumeInfo.title, Author = string.Join(", ", item.volumeInfo.authors?? new List<String>()) };
+                yield return new Book {ImgURI = item.volumeInfo.imageLinks.thumbnail, Title = item.volumeInfo.title, Author = string.Join(", ", item.volumeInfo.authors?? new List<String>()) }; //TODO include imgsrc
             }
+
+             //ImgURI = item.volumeInfo.imageLinks, 
 
         }
     }

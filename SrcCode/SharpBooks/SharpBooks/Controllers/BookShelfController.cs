@@ -6,10 +6,12 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SharpBooks.Models;
 using Microsoft.AspNet.Identity;
+using SharpBooks.Services;
 
 namespace SharpBooks.Controllers
 {
@@ -74,12 +76,34 @@ namespace SharpBooks.Controllers
 
         // POST: api/BookShelf
         [ResponseType(typeof(BookshelfItem))]
-        public IHttpActionResult PostBookshelfItem(BookshelfItem bookshelfItem)
+        public async Task <IHttpActionResult> PostBookshelfItem(BookshelfItem bookshelfItem)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            if (bookshelfItem.ImgURI == null)
+            {
+                GoogleBookSearch search = new GoogleBookSearch();
+                IEnumerable<Book> result = await search.ISBNSearch(bookshelfItem.ISBN);
+
+
+                Book firstResult = result.FirstOrDefault();
+                if (firstResult != null)
+                {
+                    bookshelfItem.ImgURI = firstResult.ImgURI;
+                }
+
+               
+            }
+            //if uri null go get if
+            //call uri returner
+            //bookshelfItem
+            //web api 401 error if not logged in 
+
+            
+            
 
             var userID = User.Identity.GetUserId();
             string currentUserID = User.Identity.GetUserId();

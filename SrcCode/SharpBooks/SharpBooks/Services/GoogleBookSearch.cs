@@ -80,6 +80,47 @@ namespace SharpBooks.Services
                     throw new Exception("Waaaaaahhaha google book by title fail");
                 }
             }
+        }
+
+        public async Task<IEnumerable<Models.Book>> ISBNSearch(string input)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(" https://www.googleapis.com/books/v1/volumes"); //should be in web config
+
+
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                String URIEncodedQueryString = HttpUtility.UrlEncode(input);
+
+                // New code:
+                HttpResponseMessage response = await client.GetAsync("?q=isbn:" + URIEncodedQueryString + ApiKey);
+                if (response.IsSuccessStatusCode)
+                {
+                    string peek = await response.Content.ReadAsStringAsync();
+                    GoogleBookResult result = await response.Content.ReadAsAsync<GoogleBookResult>();
+                    if (result.items == null)
+                    {
+                        result.items = new List<GoogleBookItem>();
+                    }
+                    return result.ToBooks();
+                }
+                else
+                {
+                    throw new Exception("Waaaaaahhaha google book by ISBN fail");
+                }
+            }
+
+
+
+
+
+
+
+
+
+
 
         }
 

@@ -273,6 +273,14 @@
     <Compile Include="Migrations\201412030401142_bookshelf_validation.Designer.cs">
       <DependentUpon>201412030401142_bookshelf_validation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412032206576_uri-in-book.cs" />
+    <Compile Include="Migrations\201412032206576_uri-in-book.Designer.cs">
+      <DependentUpon>201412032206576_uri-in-book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412040113270_uri-to-bookshelf-item.cs" />
+    <Compile Include="Migrations\201412040113270_uri-to-bookshelf-item.Designer.cs">
+      <DependentUpon>201412040113270_uri-to-bookshelf-item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -383,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201412030401142_bookshelf_validation.resx">
       <DependentUpon>201412030401142_bookshelf_validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412032206576_uri-in-book.resx">
+      <DependentUpon>201412032206576_uri-in-book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412040113270_uri-to-bookshelf-item.resx">
+      <DependentUpon>201412040113270_uri-to-bookshelf-item.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

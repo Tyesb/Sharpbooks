@@ -10,7 +10,10 @@ namespace SharpBooks.Services
     public interface IBookSearch
     {
        Task< IEnumerable<Book> >GeneralSearch(String input);
-       Task<IEnumerable<Book>> TitleSearch(String input); 
+       Task<IEnumerable<Book>> TitleSearch(String input);
+       Task<IEnumerable<Book>> ISBNSearch(String input);
+       
+       
        
     }
 }
