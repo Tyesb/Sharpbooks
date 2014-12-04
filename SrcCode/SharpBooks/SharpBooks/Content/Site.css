@@ -24,7 +24,7 @@ textarea {
 }
 
 .bookImage {
-    display: none;
+    /*display: none;*/
     padding-left: 200px;
     float: left;
 }

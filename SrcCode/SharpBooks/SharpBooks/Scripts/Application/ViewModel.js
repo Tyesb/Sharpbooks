@@ -1,10 +1,13 @@
-﻿console.log('onehittaquitta');
-var ClickCounterViewModel = function () {
+﻿var ClickCounterViewModel = function () {
 
     var self = this;
     this.searchBox = ko.observable(); //ko is the JS object that he knockout js library provies. searchbox = to what got enetere in 
     this.searchResults = ko.observableArray();
     this.bookShelfItems = ko.observableArray();
+    this.moreInfo = function (book) {
+        console.log("this book", book);
+        book.detailsVisible(true);
+    }
     this.searchClick = function () {
 
         $.ajax({
@@ -13,6 +16,9 @@ var ClickCounterViewModel = function () {
             type: 'GET',
             datatType: 'json',
             success: function (data) {
+                data.forEach(function (book) {
+                    book.detailsVisible = ko.observable(false);
+                });
                 self.searchResults(data);
             },
             fail: function () {
@@ -43,7 +49,7 @@ var ClickCounterViewModel = function () {
 
 ko.applyBindings(new ClickCounterViewModel());
 
-$("#bookListWrapper").on("click", ".bookTitle", function(event) {
-    $(this).next(".bookImage").addClass("displayBookImage");
-    console.log("clicked on title");
-});
+//$("#bookListWrapper").on("click", ".bookTitle", function(event) {
+//    $(this).next(".bookImage").addClass("displayBookImage");
+//    console.log("clicked on title");
+//});
