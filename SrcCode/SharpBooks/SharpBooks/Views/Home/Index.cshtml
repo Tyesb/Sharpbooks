@@ -11,9 +11,15 @@
             <input type="submit" name="submit" data-bind="click: searchClick" />
         </fieldset>
     </form>
-<div data-bind='' class="bookshelf">
     
-</div>
+    @*<div data-bind='foreach: bookshelfitems' class="bookshelf">
+        <div>
+            <ul>
+                <li data-bind='text: Title'></li> 
+            </ul>
+        </div>  
+    </div>*@
+    
     <div>
         <ul data-bind="foreach: searchResults">
             <li>
@@ -25,4 +31,4 @@
             </li>
         </ul>
     </div>
-</>
+</div>
