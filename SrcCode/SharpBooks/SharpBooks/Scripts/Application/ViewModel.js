@@ -63,5 +63,5 @@ var ClickCounterViewModel = function () {
     });
 };
 
-
+console.log(ko.observableArray);
 ko.applyBindings(new ClickCounterViewModel());

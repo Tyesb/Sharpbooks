@@ -40,6 +40,7 @@ namespace SharpBooks.Services
                     {
                         result.items = new List<GoogleBookItem>();
                     }
+                   
                     return result.ToBooks();
                 }
                 else
