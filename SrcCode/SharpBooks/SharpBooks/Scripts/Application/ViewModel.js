@@ -48,7 +48,7 @@
 
         });
     }
-    var self = this;
+
     this.bookshelfitems = ko.observableArray();
 
     $.ajax({
