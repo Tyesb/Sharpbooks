@@ -5,8 +5,8 @@
     this.searchResults = ko.observableArray();
     this.bookShelfItems = ko.observableArray();
     this.moreInfo = function (book) {
-        console.log("this book", book);
-        book.detailsVisible(true);
+        var currentVisiblity = book.detailsVisible()
+        book.detailsVisible(!currentVisiblity);
     }
     this.searchClick = function () {
 
@@ -37,7 +37,6 @@
         datatType: 'json',
         success: function (data) {
             self.bookshelfitems(data);
-            console.log("bread & butter");
         },
         fail: function () {
             alert('something up');
@@ -48,8 +47,3 @@
 
 
 ko.applyBindings(new ClickCounterViewModel());
-
-//$("#bookListWrapper").on("click", ".bookTitle", function(event) {
-//    $(this).next(".bookImage").addClass("displayBookImage");
-//    console.log("clicked on title");
-//});

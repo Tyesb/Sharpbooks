@@ -21,14 +21,19 @@
     </div>
 
     <div id="bookListWrapper">
-        <ul data-bind="foreach: searchResults">
+        <ul data-bind="foreach: searchResults" class="searchResults">
             <li>
-                <div class="bookSearchItem" data-bind="click: $root.moreInfo">
+                <div class="bookSearchItem" data-bind="click: $root.moreInfo,">
                     <div class="bookTitle">
                         <span data-bind="text: Title"> </span>
                     </div>
                     <div class="bookImage" data-bind ="visible: detailsVisible">
                         <img data-bind="attr: { src: ImgURI , title: Title}" />
+                        <div>
+                            <span>Written By: </span>
+                            <span data-bind="text: Author"></span>
+                            
+                        </div>
                     </div>
 
 
