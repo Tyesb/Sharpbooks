@@ -16,10 +16,31 @@
             type: 'GET',
             datatType: 'json',
             success: function (data) {
-                data.forEach(function (book) {
+                console.log("post list results", data);
+                data.forEach(function(book, index) {
+                    book.imageTitle = "Cover of: " + book.Title;
                     book.detailsVisible = ko.observable(false);
                 });
                 self.searchResults(data);
+            },
+            fail: function() {
+                alert('something up');
+            }
+
+        });
+    }
+
+    this.addToBookShelf = function (book) {
+        console.log("book is: ", book);
+      
+
+        $.ajax({
+            url: '/api/Bookshelf',
+            data: { ISBN: book.ISBN },
+            type: 'POST',
+            datatType: 'json',
+            success: function (data) {
+                console.log("post bookshelf results", data);
             },
             fail: function () {
                 alert('something up');

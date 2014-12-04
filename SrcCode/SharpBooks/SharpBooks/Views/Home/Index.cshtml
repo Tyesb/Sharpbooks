@@ -19,16 +19,20 @@
             </ul>
         </div>
     </div>
+    
+    <div>
+        <ul data-bind="foreach: searchResults">
 
-    <div id="bookListWrapper">
+    <div id="bookListWrapper" id="searchResults">
         <ul data-bind="foreach: searchResults" class="searchResults">
-            <li>
+            <li> 
                 <div class="bookSearchItem" data-bind="click: $root.moreInfo,">
                     <div class="bookTitle">
                         <span data-bind="text: Title"> </span>
                     </div>
+					<button data-bind="click: $root.addToBookShelf">Add to BookShelf</button>
                     <div class="bookImage" data-bind ="visible: detailsVisible">
-                        <img data-bind="attr: { src: ImgURI , title: Title}" />
+                        <img data-bind="attr: { src: ImgURI , title: imageTitle}" />
                         <div>
                             <span>Written By: </span>
                             <span data-bind="text: Author"></span>
@@ -42,5 +46,8 @@
                 <!--button for add-->
             </li>
         </ul>
+    </div>
+    <div id ="bookShelf">
+        hey
     </div>
 </div>
