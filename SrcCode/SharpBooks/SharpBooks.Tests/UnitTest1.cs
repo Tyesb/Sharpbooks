@@ -71,6 +71,23 @@ namespace SharpBooks.Tests
         }
 
         [TestMethod]
+        public void testSearchById()
+        {
+            //arrange
+            GoogleBookSearch testSearch = new GoogleBookSearch();
+
+            //act
+            IEnumerable<Models.Book> result = testSearch.GeneralSearch("8_DfMSS9r9cC").Result;
+
+            //assert
+            Assert.IsNotNull(result);
+            var CarrieResult = result.FirstOrDefault(n => n.Title.Equals("Diversity and Evolutionary Biology of Tropical Flowers"));
+            Assert.IsNotNull(CarrieResult);
+
+        }
+
+
+        [TestMethod]
         public void testTitleSearchReturns()
         {
             //arrange
@@ -85,6 +102,8 @@ namespace SharpBooks.Tests
             Assert.IsNotNull(book);
 
         }
+
+       
 
         [TestMethod]
         public void testISBNeSearchReturns()

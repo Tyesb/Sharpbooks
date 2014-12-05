@@ -86,7 +86,7 @@ namespace SharpBooks.Controllers
             if (bookshelfItem.ImgURI == null)
             {
                 GoogleBookSearch search = new GoogleBookSearch();
-                IEnumerable<Book> result = await search.ISBNSearch(bookshelfItem.ISBN);
+                IEnumerable<Book> result = await search.GeneralSearch(bookshelfItem.ISBN);
 
 
                 Book firstResult = result.FirstOrDefault();
