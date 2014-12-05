@@ -7,30 +7,39 @@
     <h2>Sharpbooks!</h2>
     <form>
         <fieldset>
-            <input type="search" name="Search" id="Search" data-bind ="value:searchBox"/>
+            <input type="search" name="Search" id="Search" data-bind="value:searchBox" />
             <input type="submit" name="submit" data-bind="click: searchClick" />
         </fieldset>
     </form>
-    
+
     <div data-bind='foreach: bookShelfItems' class="bookshelf">
         <div>
             <ul>
                 <li data-bind='text: Title'></li>
                 <li data-bind='text: type'></li> 
             </ul>
-        </div>  
+        </div>
     </div>
     
-    <div id ="searchResults">
-        <ul data-bind="foreach: searchResults">
-            <li>
-                <div class="bookSearchItem">
-                    <span data-bind="text: Title"> </span>
-                    <img data-bind="attr: { src: ImgURI , title: imageTitle}," />
-                    
-                    <button data-bind="click: $root.addToBookShelf">Add to BookShelf</button>
-                       
-                    
+
+    <div id="bookListWrapper" id="searchResults">
+        <ul data-bind="foreach: searchResults" class="searchResults">
+            <li> 
+                <div class="bookSearchItem" data-bind="click: $root.moreInfo,">
+                    <div class="bookTitle">
+                        <span data-bind="text: Title"> </span>
+                    </div>
+					<button data-bind="click: $root.addToBookShelf">Add to BookShelf</button>
+                    <div class="bookImage" data-bind ="visible: detailsVisible">
+                        <img data-bind="attr: { src: ImgURI , title: imageTitle}" />
+                        <div>
+                            <span>Written By: </span>
+                            <span data-bind="text: Author"></span>
+                            
+                        </div>
+                    </div>
+
+
                     <!--<a href="#" data-bind="click: $"></a>-->
                 </div>
                 <!--button for add-->
@@ -38,6 +47,5 @@
         </ul>
     </div>
     <div id ="bookShelf">
-        hey
     </div>
 </div>

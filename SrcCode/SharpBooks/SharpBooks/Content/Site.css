@@ -28,3 +28,23 @@ textarea {
     width: 300px;
     background-color: #b0e0e6;
 }
+.bookSearchItem {
+    /*display: none;*/
+    /*padding-left: 200px;
+    float: left;*/
+    padding: 1em;
+    border-width: 1px;
+    border: darkslategray;
+    border-style: solid;
+    margin: 0.1em;
+    border-radius: 5px;
+    background-color: azure;
+}
+
+ul.searchResults {
+    list-style-type: none;
+}
+
+.displayBookImage {
+    display: block;
+}
