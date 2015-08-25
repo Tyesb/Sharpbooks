@@ -24,7 +24,7 @@ Sharpbooks
 
 -GET
 /api/search
-gets all the books from your bookshelf
+gets all the books from your bookshelf and stores them
 
 -POST
 /api/bookshelf
